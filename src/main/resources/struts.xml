@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+	<struts>
+		<constant name="struts.devMode" value="true" />
+		<package name="default" extends="struts-default" strict-method-invocation="false">
+			<interceptors>
+				<interceptor name="aa" class="com.woniu.web.interceptor.A"></interceptor>
+				<interceptor-stack name="ms">
+					<interceptor-ref name="aa" />
+					<interceptor-ref name="defaultStack" />
+				</interceptor-stack>
+			</interceptors>
+			
+			<action name="*_*" class="com.woniu.action.{1}Action" method="{2}">
+				<interceptor-ref name="ms"></interceptor-ref>
+				<result name="findAll" type="redirectAction">User_findAll</result>
+				<result name="index">index.jsp</result>
+				
+			</action>
+		</package>
+	</struts>

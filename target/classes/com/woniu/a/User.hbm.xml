@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping package="com.woniu.a">
+    	<class name="User" table="user" >
+    		<id name="id" column="id" type="int">
+    			<generator class="native"></generator>
+    		</id>
+    		<property name="name" column="name" type="string"></property>
+    		<property name="birthday" column="birthday" type="date"></property>
+    		<property name="money" column="money" type="double"></property>
+    	</class>
+    </hibernate-mapping>
